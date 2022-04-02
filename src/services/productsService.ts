@@ -2,7 +2,7 @@ import { IProduct, Product } from '../interfaces/producsInterface';
 import connection from '../models/connection';
 import ProductsModel from '../models/productsModel';
 
-class ProductsService {
+export default class ProductsService {
   public model: ProductsModel;
 
   constructor() {
@@ -19,5 +19,3 @@ class ProductsService {
     return newProduct;
   }
 }
-
-export default ProductsService;
