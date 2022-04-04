@@ -1,9 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import UserService from '../services/usersService';
 
 export default class UsersMiddlewares {
-  constructor(private userService = new UserService()) { }
-
   public validateUsername = async (req: Request, res: Response, next: NextFunction) => {
     const { username } = req.body;
     try {

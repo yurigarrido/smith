@@ -1,9 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import ProductsService from '../services/productsService';
 
 class ProductsMiddlewares {
-  constructor(private productService = new ProductsService()) { }
-
   public validateName = async (req: Request, res: Response, next: NextFunction) => {
     const { name } = req.body;
     try {

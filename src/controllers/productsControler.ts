@@ -1,8 +1,12 @@
 import { Request, Response } from 'express';
 import ProductsService from '../services/productsService';
 
-class ProductsController {
-  constructor(private productService = new ProductsService()) { }
+export default class ProductsController {
+  private productService: ProductsService;
+
+  constructor() {
+    this.productService = new ProductsService();
+  }
 
   public getAll = async (_req: Request, res: Response) => {
     const allProducts = await this.productService.getAll();
@@ -15,5 +19,3 @@ class ProductsController {
     return res.status(201).json({ item: newProduct });
   };
 }
-
-export default ProductsController;
